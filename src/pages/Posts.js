@@ -5,6 +5,10 @@ import '../style/Posts.css';
 
 const Posts = () => {
   const data = useSelector((state) => state.post.value);
+  console.log(data)
+  if (data.length === 0) {
+    return <div style={{display : "flex",justifyContent: "center"}}>No data available</div>;
+  }else{
 
   return (
     <div className='Posts'>
@@ -21,7 +25,7 @@ const Posts = () => {
         />
       ))}
     </div>
-  );
+  );}
 };
 
 export default Posts;
